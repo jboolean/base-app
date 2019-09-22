@@ -1,5 +1,8 @@
 {
-  "extends": ["squarespace"],
+  "extends": ["squarespace",
+    "squarespace/react",
+    "plugin:prettier/recommended",
+    "prettier/react"],
   "env": {
     "browser": true,
     "mocha": true,

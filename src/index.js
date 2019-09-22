@@ -6,4 +6,7 @@ import 'core-js/stable';
 
 import HelloWorld from './HelloWorld';
 
-ReactDOM.render(React.createElement(HelloWorld), document.getElementById('app-container'));
+ReactDOM.render(
+  React.createElement(HelloWorld),
+  document.getElementById('app-container')
+);
