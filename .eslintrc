@@ -1,0 +1,26 @@
+{
+  "extends": ["squarespace"],
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "globals": {
+    "WOWDComponents": true,
+    "__DEV__": true
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.prod.js"
+      }
+    }
+  },
+  "rules": {
+    "no-var": "error",
+    "prefer-const": "warn"
+  }
+}

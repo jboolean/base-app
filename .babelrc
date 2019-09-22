@@ -1,0 +1,15 @@
+{
+  "plugins": [
+    "transform-class-properties"
+  ],
+  "presets": [
+    ["env", { 
+      "targets": {
+        "browsers": ["> 5% in US", "last 2 versions"]
+      },
+      "exclude": ["transform-regenerator", "es6.typed.array-buffer"],
+      "useBuiltIns": true
+    }],
+    "react"
+  ]
+}
