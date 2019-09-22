@@ -1,7 +1,7 @@
 // We are using node's native package 'path'
 // https://nodejs.org/api/path.html
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
 
@@ -20,7 +20,9 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
-    new ExtractTextPlugin('style.bundle.css'),
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css'
+    }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
   ],
   module: {
@@ -40,19 +42,19 @@ module.exports = {
       },
       {
         test: /\.(css|less)$/,
-        loader: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
                 localIdentName: '[name]-[local]-[hash:base64:5]',
-                minify: true,
-                importLoaders: 2
-              }
-            },
-            'postcss-loader',
-            'less-loader'],
-        }),
+              },
+              importLoaders: 2
+            }
+          },
+          'postcss-loader',
+          'less-loader'],
       },
       {
         test: /\.(png|jpg|gif)$/,

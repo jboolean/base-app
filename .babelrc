@@ -1,15 +1,16 @@
 {
   "plugins": [
-    "transform-class-properties"
+    "@babel/plugin-proposal-class-properties"
   ],
   "presets": [
-    ["env", { 
+    ["@babel/env", { 
       "targets": {
         "browsers": ["> 5% in US", "last 2 versions"]
       },
-      "exclude": ["transform-regenerator", "es6.typed.array-buffer"],
-      "useBuiltIns": true
+      "exclude": ["transform-regenerator"],
+      "useBuiltIns": "usage",
+      "corejs": 3
     }],
-    "react"
+    "@babel/preset-react"
   ]
 }
