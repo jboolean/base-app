@@ -8,9 +8,9 @@
     "build": "webpack  --config webpack.prod.js",
     "watch": "webpack-dev-server --config webpack.dev.js",
     "watch:hot": "webpack-dev-server --config webpack.dev.js --hotOnly",
-    "lint": "eslint --ext .js --ext jsx src",
-    "lint-strict": "eslint --ext .js --ext jsx --max-warnings 0 src",
-    "lint-fix": "eslint --ext .js --ext jsx --fix src",
+    "lint": "eslint --ext .js --ext jsx --ext .ts --ext .tsx src",
+    "lint-strict": "eslint --ext .js --ext jsx --ext .ts --ext .tsx --max-warnings 0 src",
+    "lint-fix": "eslint --ext .js --ext jsx --ext .ts --ext .tsx --fix src",
     "profile": "webpack --profile --json --config webpack.prod.js > dist/stats.json && webpack-bundle-analyzer dist/stats.json"
   },
   "keywords": [],
@@ -32,6 +32,10 @@
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "@typescript-eslint/parser": "^2.3.0",
     "autoprefixer": "^9.6.1",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
@@ -52,6 +56,8 @@
     "mini-css-extract-plugin": "^0.8.0",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.18.2",
+    "ts-loader": "^6.1.2",
+    "typescript": "^3.6.3",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.40.2",
     "webpack-bundle-analyzer": "^3.5.1",
@@ -65,7 +71,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": [
+    "src/**/*.{js,jsx,ts,tsx}": [
       "eslint --fix --max-warnings 0",
       "git add"
     ]

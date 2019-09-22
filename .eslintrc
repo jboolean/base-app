@@ -1,18 +1,24 @@
 {
   "extends": ["squarespace",
     "squarespace/react",
+    "prettier",
     "plugin:prettier/recommended",
-    "prettier/react"],
+    
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "prettier/react"
+  ],
+  "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true,
     "mocha": true,
     "node": true
   },
   "plugins": [
-    "react"
+    "react",
+    "@typescript-eslint"
   ],
   "globals": {
-    "WOWDComponents": true,
     "__DEV__": true
   },
   "settings": {
