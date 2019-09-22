@@ -1,3 +1,11 @@
+# Julian's Base App
+This repo is my starting place for new frontend apps.
+- Webpack
+- React
+- LESS CSS
+- Typescript
+- Linting and Prettier
+
 ## Pre-requisites
 
 This project was developed with NPM 6 and Node 10.
